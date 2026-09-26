@@ -4,8 +4,8 @@ Este documento descreve como configurei o ambiente de desenvolvimento do ESM For
 
 | Parte | Repositório (meu fork) | Original |
 |---|---|---|
-| Backend (Node.js, Express, SQLite) | https://github.com/tteudev/esmforum | https://github.com/jeffsantos/esmforum |
-| Frontend (React) | https://github.com/tteudev/esmforum-react | https://github.com/jeffsantos/esmforum-react |
+| Backend (Node.js, Express, SQLite) | https://github.com/tteudev/FGV-es1-projeto-final | https://github.com/jeffsantos/esmforum |
+| Frontend (React) | https://github.com/tteudev/FGV-es1-projeto-final-frontend | https://github.com/jeffsantos/esmforum-react |
 
 ## Ambiente utilizado
 

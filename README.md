@@ -2,7 +2,7 @@
 
 ## Projeto Final de Engenharia de Software (ES1)
 
-Este é o meu fork do backend, usado no projeto final da disciplina. O frontend está em [tteudev/esmforum-react](https://github.com/tteudev/esmforum-react). Documentos por parte:
+Este é o meu fork do backend, usado no projeto final da disciplina. O frontend está em [tteudev/FGV-es1-projeto-final-frontend](https://github.com/tteudev/FGV-es1-projeto-final-frontend). Documentos por parte:
 
 | Parte | Documentos |
 |---|---|
