@@ -1,0 +1,27 @@
+flowchart LR
+    subgraph Browser["Navegador (localhost:3000)"]
+        direction TB
+        subgraph Apresentacao["Camada de apresentação - React (esmforum-react)"]
+            Menu["Menu.js"]
+            Pergunta["Pergunta.js"]
+            Resposta["Resposta.js"]
+        end
+    end
+
+    subgraph Servidor["Servidor Node.js (localhost:5000) - esmforum"]
+        direction TB
+        Controlador["Controlador<br/>server.js (Express, rotas REST)"]
+        Modelo["Modelo / negócio<br/>modelo.js"]
+        Busca["Busca<br/>busca/ (serviço, estratégias, repositório)"]
+        Acesso["Acesso a dados<br/>bd/bd_utils.js"]
+        Controlador --> Modelo
+        Controlador --> Busca
+        Modelo --> Acesso
+        Busca --> Acesso
+    end
+
+    BD[("SQLite<br/>bd/esmforum.db")]
+
+    Pergunta -- "HTTP + JSON (fetch)" --> Controlador
+    Resposta -- "HTTP + JSON (fetch)" --> Controlador
+    Acesso --> BD
