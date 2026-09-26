@@ -1,5 +1,6 @@
 const express = require('express')
 const modelo = require('./modelo.js');
+const busca = require('./busca');
 
 const app = express()
 app.use(express.json());
@@ -18,6 +19,16 @@ app.get('/', (req, res) => {
   }
   catch(erro) {
     res.status(500).json(erro.message); 
+  }
+});
+
+// GET /perguntas/busca?q=termo&modo=trecho|palavras
+app.get('/perguntas/busca', (req, res) => {
+  try {
+    res.json(busca.buscar(req.query.q, req.query.modo));
+  }
+  catch(erro) {
+    res.status(500).json(erro.message);
   }
 });
 
