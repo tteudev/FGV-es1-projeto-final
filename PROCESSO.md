@@ -2,7 +2,7 @@
 
 Para gerenciar o desenvolvimento das cinco funcionalidades solicitadas pelo cliente, escolhi um quadro estilo **Kanban** no GitHub Projects.
 
-**Quadro:** ver a seção 4 deste documento.
+**Quadro no GitHub Projects:** https://github.com/users/tteudev/projects/2 (visão "Kanban", em formato de quadro). A configuração está descrita na seção 4.
 
 ## 1. O que é o Kanban
 
@@ -36,6 +36,10 @@ Kanban é um método ágil de gestão de fluxo de trabalho. Suas característica
 O ponto fraco do Kanban para este caso é não ter prazos internos naturais como os de um sprint. Para compensar, usei o prazo de entrega do trabalho como referência e priorizei os cartões em função dele.
 
 ## 4. Configuração do quadro
+
+![Quadro Kanban no GitHub Projects](docs/board_kanban.png)
+
+O quadro foi criado no GitHub Projects, vinculado ao repositório e com visibilidade pública. Os cinco cartões iniciais estão em "Backlog", na ordem de prioridade da tabela abaixo.
 
 ### Colunas
 
