@@ -1,0 +1,31 @@
+flowchart TB
+    subgraph Apresentacao["Camada de apresentação (API)"]
+        R["routes/<br/>votos.rotas.js, busca.rotas.js"]
+        C["controllers/<br/>VotosController, BuscaController"]
+        V["views/<br/>apresentadores JSON"]
+        R --> C
+        C --> V
+    end
+
+    subgraph Negocio["Camada de negócio"]
+        S["services/<br/>ServicoVotos, ServicoBusca"]
+        E["estrategias/<br/>BuscaPorTrecho, ..."]
+        S --> E
+    end
+
+    subgraph Dados["Camada de dados"]
+        RP["repositories/<br/>RepositorioVotos, RepositorioPerguntas"]
+        DB["bd/bd_utils.js"]
+        RP --> DB
+    end
+
+    BD[("SQLite")]
+
+    C --> S
+    S --> RP
+    DB --> BD
+
+    CI["Raiz de composição<br/>(server.js): cria e liga as peças"]
+    CI -.-> C
+    CI -.-> S
+    CI -.-> RP

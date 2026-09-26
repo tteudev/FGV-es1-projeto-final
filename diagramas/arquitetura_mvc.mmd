@@ -1,0 +1,39 @@
+classDiagram
+    class VotosController {
+        +votar(req, res)
+    }
+    class BuscaController {
+        +buscar(req, res)
+    }
+    class ServicoVotos {
+        +votar(id_pergunta, id_usuario, valor) ResultadoVoto
+    }
+    class ServicoBusca {
+        +buscar(termo) Pergunta[]
+    }
+    class Voto {
+        +id_voto
+        +id_pergunta
+        +id_usuario
+        +valor
+    }
+    class Pergunta {
+        +id_pergunta
+        +texto
+        +id_usuario
+        +num_respostas
+    }
+    class VotoView {
+        +resultado(saldo, voto_atual) JSON
+        +erro(mensagem) JSON
+    }
+    class PerguntaView {
+        +lista(perguntas) JSON
+    }
+
+    VotosController --> ServicoVotos : chama
+    VotosController --> VotoView : formata resposta
+    ServicoVotos --> Voto : manipula
+    BuscaController --> ServicoBusca : chama
+    BuscaController --> PerguntaView : formata resposta
+    ServicoBusca --> Pergunta : filtra
