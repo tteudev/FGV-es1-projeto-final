@@ -1,5 +1,19 @@
 # ESM Forum
 
+## Projeto Final de Engenharia de Software (ES1)
+
+Este é o meu fork do backend, usado no projeto final da disciplina. O frontend está em [tteudev/esmforum-react](https://github.com/tteudev/esmforum-react). Documentos por parte:
+
+| Parte | Documentos |
+|---|---|
+| 1 | [INSTALACAO.md](INSTALACAO.md), [PROCESSO.md](PROCESSO.md), [DESIGN_SIMPLES.md](DESIGN_SIMPLES.md), [PAIR_PROGRAMMING.md](PAIR_PROGRAMMING.md) |
+| 2 | [HISTORIAS.md](HISTORIAS.md), [CASO_DE_USO.md](CASO_DE_USO.md), [DIAGRAMAS.md](DIAGRAMAS.md) (classes, sequência, atividades e estados, em [diagramas/](diagramas/)) |
+| 3 | [ANALISE_SOLID.md](ANALISE_SOLID.md), [IMPLEMENTACAO_SOLID.md](IMPLEMENTACAO_SOLID.md) (código em [busca/](busca/)), [PADROES_EXISTENTES.md](PADROES_EXISTENTES.md), [PADROES_PROPOSTOS.md](PADROES_PROPOSTOS.md), [ARQUITETURA.md](ARQUITETURA.md), [PROPOSTA_ARQUITETURA.md](PROPOSTA_ARQUITETURA.md) |
+
+---
+
+# ESM Forum (README original)
+
 O **ESM Forum** é um sistema minimalista de demonstração do livro [Engenharia de Software Moderna](https://engsoftmoderna.info). 
 Ele é um fórum simples de perguntas e respostas. O objetivo é permitir que os alunos tenham um primeiro contato prático com os conceitos estudados no livro. Ou seja:
 
