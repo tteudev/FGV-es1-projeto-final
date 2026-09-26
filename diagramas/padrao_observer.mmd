@@ -1,0 +1,26 @@
+classDiagram
+    class BarramentoEventos {
+        -observadores
+        +inscrever(evento, observador)
+        +publicar(evento, dados)
+    }
+    class ServicoRespostas {
+        -repositorio
+        -barramento
+        +cadastrar(id_pergunta, id_usuario, texto) int
+    }
+    class Observador {
+        <<interface>>
+        +atualizar(dados)
+    }
+    class NotificadorAutor {
+        +atualizar(dados)
+    }
+    class RegistradorAtividade {
+        +atualizar(dados)
+    }
+
+    ServicoRespostas --> BarramentoEventos : publica resposta_cadastrada
+    BarramentoEventos o-- Observador : notifica
+    Observador <|.. NotificadorAutor
+    Observador <|.. RegistradorAtividade

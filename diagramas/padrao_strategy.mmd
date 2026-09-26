@@ -1,0 +1,24 @@
+classDiagram
+    class ServicoListagem {
+        -repositorio
+        -estrategia
+        +listar() Pergunta[]
+    }
+    class EstrategiaOrdenacao {
+        <<interface>>
+        +ordenar(perguntas) Pergunta[]
+    }
+    class PorMaisRecentes {
+        +ordenar(perguntas) Pergunta[]
+    }
+    class PorMaisVotadas {
+        +ordenar(perguntas) Pergunta[]
+    }
+    class PorMaisRespondidas {
+        +ordenar(perguntas) Pergunta[]
+    }
+
+    ServicoListagem --> EstrategiaOrdenacao : usa
+    EstrategiaOrdenacao <|.. PorMaisRecentes
+    EstrategiaOrdenacao <|.. PorMaisVotadas
+    EstrategiaOrdenacao <|.. PorMaisRespondidas

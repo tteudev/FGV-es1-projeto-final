@@ -1,0 +1,29 @@
+classDiagram
+    class RepositorioPerguntas {
+        <<interface>>
+        +listarPerguntas() Pergunta[]
+    }
+    class RepositorioPerguntasBd {
+        +listarPerguntas() Pergunta[]
+    }
+    class DecoradorRepositorio {
+        #interno
+        +listarPerguntas() Pergunta[]
+    }
+    class RepositorioComVotos {
+        +listarPerguntas() Pergunta[]
+    }
+    class RepositorioComTags {
+        +listarPerguntas() Pergunta[]
+    }
+    class ServicoBusca {
+        -repositorio
+        +buscar(termo) Pergunta[]
+    }
+
+    RepositorioPerguntas <|.. RepositorioPerguntasBd
+    RepositorioPerguntas <|.. DecoradorRepositorio
+    DecoradorRepositorio o-- RepositorioPerguntas : envolve
+    DecoradorRepositorio <|-- RepositorioComVotos
+    DecoradorRepositorio <|-- RepositorioComTags
+    ServicoBusca --> RepositorioPerguntas : usa
