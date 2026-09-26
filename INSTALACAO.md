@@ -84,6 +84,18 @@ npm uninstall sqlite3
 
 Depois disso a instalação em pasta limpa e os testes passaram.
 
+### Problema 4: instalação guiada pelo `package-lock.json` tentava compilar o `better-sqlite3`
+
+Mesmo depois das correções acima, o `npm install` em pasta limpa continuou falhando com `node-gyp rebuild` e o erro do Visual Studio, agora no `better-sqlite3`. A versão 13 traz binários prontos e não precisa compilar. Fiz três testes em pastas novas:
+
+| Teste | Resultado |
+|---|---|
+| `npm install` com o `package-lock.json` do repositório | Falha (tenta compilar) |
+| `npm install --ignore-scripts` com o lock | Funciona, e os testes passam |
+| `npm install` sem o `package-lock.json` | Funciona, e os testes passam |
+
+Conclusão: o problema estava na instalação guiada pelo lock, e não no código. Como o lock original do projeto era antigo e o arquivo não é necessário para este trabalho, deixei de versioná-lo. O `npm install` resolve as dependências sozinho. Repeti a instalação do zero em duas pastas diferentes: nas duas, 407 pacotes instalados, 14 testes passando e o endpoint de busca respondendo.
+
 ### Como testei o backend
 
 Com o servidor rodando, `GET http://localhost:5000/` retornou a lista de perguntas do banco em JSON, por exemplo:
