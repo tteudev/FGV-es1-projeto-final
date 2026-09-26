@@ -31,7 +31,7 @@ Como o trabalho seria a distância, usaria:
 
 - **VS Code Live Share:** edição colaborativa em tempo real no mesmo projeto, com cursores e terminal compartilhados. É a principal ferramenta, pois o navigator pode apontar trechos e também editar quando necessário.
 - **Discord ou Google Meet:** áudio (e vídeo, se possível) para conversar durante a sessão. A comunicação verbal constante é o que diferencia pair programming de revisão de código.
-- **GitHub (branches e pull requests):** cada funcionalidade em um branch próprio; a dupla faz os commits alternadamente, e o commit pode registrar o par com a linha `Co-authored-by` na mensagem.
+- **GitHub (branches e pull requests):** cada funcionalidade em um branch próprio; a dupla faz os commits alternadamente, e a mensagem de cada commit pode citar o nome do par.
 - **GitHub Projects:** para acompanhar o card em andamento.
 - **Terminal integrado do VS Code:** para rodar backend, frontend e testes sem sair do editor.
 
