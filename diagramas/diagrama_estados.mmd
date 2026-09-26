@@ -1,0 +1,19 @@
+stateDiagram-v2
+    direction LR
+    [*] --> Aberta : cadastrar pergunta
+    Aberta --> Respondida : cadastrar primeira resposta
+    Respondida --> Respondida : cadastrar nova resposta
+    Aberta --> Removida : autor exclui
+    Respondida --> Removida : autor exclui
+    Removida --> [*]
+
+    note right of Aberta
+        Sem respostas (num_respostas = 0).
+        Editar texto e votar não mudam o estado.
+    end note
+
+    note right of Respondida
+        Uma ou mais respostas (num_respostas maior que 0).
+        Cada nova resposta gera uma notificação ao autor.
+        Editar texto e votar não mudam o estado.
+    end note

@@ -1,0 +1,48 @@
+classDiagram
+    direction LR
+
+    class Usuario {
+        +int id_usuario
+        +string nome
+    }
+
+    class Pergunta {
+        +int id_pergunta
+        +string texto
+        +int id_usuario
+    }
+
+    class Resposta {
+        +int id_resposta
+        +int id_pergunta
+        +string texto
+        +int id_usuario
+    }
+
+    class Voto {
+        +int id_voto
+        +int id_pergunta
+        +int id_usuario
+        +int valor
+    }
+
+    class Tag {
+        +int id_tag
+        +string nome
+    }
+
+    class Notificacao {
+        +int id_notificacao
+        +int id_usuario
+        +int id_resposta
+        +boolean lida
+    }
+
+    Usuario "1" --> "0..*" Pergunta : faz
+    Usuario "1" --> "0..*" Resposta : escreve
+    Usuario "1" --> "0..*" Voto : registra
+    Usuario "1" --> "0..*" Notificacao : recebe
+    Pergunta "1" *-- "0..*" Resposta : possui
+    Pergunta "1" *-- "0..*" Voto : recebe
+    Pergunta "0..*" -- "1..*" Tag : classificada por
+    Resposta "1" --> "0..*" Notificacao : gera

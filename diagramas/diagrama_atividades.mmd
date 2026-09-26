@@ -1,0 +1,27 @@
+flowchart TD
+    inicio(["Início"]) --> preencher["Usuário escreve a pergunta e escolhe as tags"]
+    preencher --> enviar["Usuário clica em Enviar"]
+    enviar --> fork1[" "]:::barra
+
+    fork1 --> vtexto["Validar texto (não vazio)"]
+    fork1 --> vtags["Validar tags (existem na lista predefinida)"]
+
+    vtexto --> join1[" "]:::barra
+    vtags --> join1
+
+    join1 --> valido{"Texto e tags válidos?"}
+
+    valido -- "não" --> erro["Exibir mensagem de erro"]
+    erro --> fim1(["Fim"])
+
+    valido -- "sim" --> temtags{"Escolheu alguma tag?"}
+    temtags -- "não" --> padrao["Atribuir a tag dúvidas-gerais"]
+    temtags -- "sim" --> gravar
+    padrao --> gravar["Gravar a pergunta no banco"]
+
+    gravar --> assoc["Gravar as associações pergunta-tag"]
+    assoc --> retornar["Devolver o id da nova pergunta"]
+    retornar --> atualizar["Atualizar a lista de perguntas na tela"]
+    atualizar --> fim2(["Fim"])
+
+    classDef barra fill:#000,stroke:#000,color:#000,width:120px,height:6px

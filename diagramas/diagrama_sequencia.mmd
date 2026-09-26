@@ -1,0 +1,39 @@
+sequenceDiagram
+    actor U as :Usuario
+    participant F as :Frontend (React)
+    participant A as :API (server.js)
+    participant M as :Modelo (modelo.js)
+    participant B as :Banco (SQLite)
+
+    U->>F: clica em upvote/downvote da pergunta
+    F->>A: POST /perguntas/:id_pergunta/votos {id_usuario, valor}
+    A->>M: votar(id_pergunta, id_usuario, valor)
+    M->>B: SELECT pergunta por id
+    B-->>M: pergunta ou vazio
+
+    alt pergunta não existe
+        M-->>A: erro "Pergunta não encontrada"
+        A-->>F: 404
+        F-->>U: exibe mensagem de erro
+    else valor diferente de +1 e -1
+        M-->>A: erro "Voto inválido"
+        A-->>F: 400
+        F-->>U: exibe mensagem de erro
+    else pergunta válida
+        M->>B: SELECT voto do usuário na pergunta
+        B-->>M: voto anterior ou vazio
+
+        alt sem voto anterior
+            M->>B: INSERT voto
+        else voto anterior com valor oposto
+            M->>B: UPDATE voto (novo valor)
+        else voto anterior com o mesmo valor
+            M->>B: DELETE voto
+        end
+
+        M->>B: SELECT soma dos valores dos votos da pergunta
+        B-->>M: saldo
+        M-->>A: {saldo, voto_atual}
+        A-->>F: 200 {saldo, voto_atual}
+        F-->>U: atualiza saldo e destaca o botão escolhido
+    end
