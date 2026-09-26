@@ -142,7 +142,7 @@ Cuidado para não exagerar: criar uma hierarquia de classes de erro ou um framew
 ### 2.3 Pequenas inconsistências que atrapalham a leitura
 
 - O comentário de `listar_perguntas` diz `texto: int`, mas `texto` é uma string.
-- Existem duas dependências de SQLite no `package.json` (`better-sqlite3` e `sqlite3`), mas o código só usa a primeira. Remover `sqlite3` reduz o tempo de instalação e a superfície de problemas.
+- Existem duas dependências de SQLite no `package.json` (`better-sqlite3` e `sqlite3`), mas o código só usa a primeira. Remover `sqlite3` reduz o tempo de instalação e a superfície de problemas. Fiz essa remoção: além de não ser usada, essa dependência quebrava o `npm install` em ambiente limpo (ver `INSTALACAO.md`, Problema 3).
 - A documentação em `docs/arquitetura.md` descreve o endpoint como `GET /respostas/?id_pergunta=n`, mas o código usa parâmetro de caminho (`GET /respostas/:id_pergunta`).
 
 São mudanças pequenas que tornam o sistema mais fácil de entender sem acrescentar nada novo, o que é coerente com o design simples.

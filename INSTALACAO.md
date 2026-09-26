@@ -67,6 +67,23 @@ Isso alterou o `package.json` e o `package-lock.json` (de `^11.0.0` para a séri
 
 No `server.js` o servidor escuta em `localhost`. No Node 24 esse nome resolveu apenas para o endereço IPv6 (`::1`), então uma requisição para `http://127.0.0.1:5000` falha, enquanto `http://localhost:5000` e `http://[::1]:5000` funcionam. O frontend usa `localhost`, então nada precisou ser mudado. Em ferramentas como Postman ou Thunder Client, use `localhost` (ou `[::1]`).
 
+### Problema 3: `sqlite3` falha a instalação em um ambiente limpo
+
+Ao testar a instalação do zero em uma pasta nova, o `npm install` voltou a falhar, agora no pacote `sqlite3`:
+
+```
+prebuild-install warn install No prebuilt binaries found
+gyp ERR! find VS You need to install the latest version of Visual Studio
+```
+
+O `package.json` listava dois pacotes de SQLite, `better-sqlite3` e `sqlite3`, mas o código só usa o primeiro (`bd/bd_utils.js`; uma busca por `require('sqlite3')` no projeto não encontra nada). Como o `sqlite3` também precisa compilar quando não há binário, ele quebrava a instalação sem ter utilidade. Removi a dependência:
+
+```console
+npm uninstall sqlite3
+```
+
+Depois disso a instalação em pasta limpa e os testes passaram.
+
 ### Como testei o backend
 
 Com o servidor rodando, `GET http://localhost:5000/` retornou a lista de perguntas do banco em JSON, por exemplo:
@@ -107,7 +124,7 @@ O build de produção concluiu com sucesso. O `npm install` mostra avisos de vul
 
 | Problema | O que fazer |
 |---|---|
-| `gyp ERR! find VS` no `npm install` do backend | Atualizar o `better-sqlite3` (Problema 1) ou instalar o Visual Studio com o componente "Desenvolvimento para desktop com C++" |
+| `gyp ERR! find VS` no `npm install` do backend | Atualizar o `better-sqlite3` (Problema 1), remover o `sqlite3` que não é usado (Problema 3) ou instalar o Visual Studio com o componente "Desenvolvimento para desktop com C++" |
 | `127.0.0.1:5000` não conecta | Usar `localhost:5000` ou `[::1]:5000` (Problema 2) |
 | Frontend abre, mas a lista de perguntas fica vazia | Conferir se o backend está rodando na porta 5000 |
 | `Error: listen EADDRINUSE :::5000` | Já existe um processo usando a porta; encerrá-lo antes de subir o servidor de novo |
