@@ -4,11 +4,11 @@
 
 Este é o meu fork do backend, usado no projeto final da disciplina. O frontend está em [tteudev/FGV-es1-projeto-final-frontend](https://github.com/tteudev/FGV-es1-projeto-final-frontend). Documentos por parte:
 
-| Parte | Documentos |
-|---|---|
-| 1 | [INSTALACAO.md](INSTALACAO.md), [PROCESSO.md](PROCESSO.md), [DESIGN_SIMPLES.md](DESIGN_SIMPLES.md), [PAIR_PROGRAMMING.md](PAIR_PROGRAMMING.md) |
-| 2 | [HISTORIAS.md](HISTORIAS.md), [CASO_DE_USO.md](CASO_DE_USO.md), [DIAGRAMAS.md](DIAGRAMAS.md) (classes, sequência, atividades e estados, em [diagramas/](diagramas/)) |
-| 3 | [ANALISE_SOLID.md](ANALISE_SOLID.md), [IMPLEMENTACAO_SOLID.md](IMPLEMENTACAO_SOLID.md) (código em [busca/](busca/)), [PADROES_EXISTENTES.md](PADROES_EXISTENTES.md), [PADROES_PROPOSTOS.md](PADROES_PROPOSTOS.md), [ARQUITETURA.md](ARQUITETURA.md), [PROPOSTA_ARQUITETURA.md](PROPOSTA_ARQUITETURA.md) |
+| Parte | Pasta | Documentos |
+|---|---|---|
+| 1 | [parte1/](parte1/) | [INSTALACAO.md](parte1/INSTALACAO.md), [PROCESSO.md](parte1/PROCESSO.md), [DESIGN_SIMPLES.md](parte1/DESIGN_SIMPLES.md), [PAIR_PROGRAMMING.md](parte1/PAIR_PROGRAMMING.md). Quadro Kanban: [GitHub Projects](https://github.com/users/tteudev/projects/2) |
+| 2 | [parte2/](parte2/) | [HISTORIAS.md](parte2/HISTORIAS.md), [CASO_DE_USO.md](parte2/CASO_DE_USO.md), [DIAGRAMAS.md](parte2/DIAGRAMAS.md) (classes, sequência, atividades e estados, em [parte2/diagramas/](parte2/diagramas/)) |
+| 3 | [parte3/](parte3/) | [ANALISE_SOLID.md](parte3/ANALISE_SOLID.md), [IMPLEMENTACAO_SOLID.md](parte3/IMPLEMENTACAO_SOLID.md) (código em [busca/](busca/)), [PADROES_EXISTENTES.md](parte3/PADROES_EXISTENTES.md), [PADROES_PROPOSTOS.md](parte3/PADROES_PROPOSTOS.md), [ARQUITETURA.md](parte3/ARQUITETURA.md), [PROPOSTA_ARQUITETURA.md](parte3/PROPOSTA_ARQUITETURA.md) (diagramas em [parte3/diagramas/](parte3/diagramas/)) |
 
 ---
 

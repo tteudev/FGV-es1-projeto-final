@@ -37,7 +37,7 @@ O ponto fraco do Kanban para este caso é não ter prazos internos naturais como
 
 ## 4. Configuração do quadro
 
-![Quadro Kanban no GitHub Projects](docs/board_kanban.png)
+![Quadro Kanban no GitHub Projects](board_kanban.png)
 
 O quadro foi criado no GitHub Projects, vinculado ao repositório e com visibilidade pública. Os cinco cartões iniciais estão em "Backlog", na ordem de prioridade da tabela abaixo.
 
